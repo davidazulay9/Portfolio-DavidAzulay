@@ -31,21 +31,16 @@ const Contact = () => {
     
     setIsSubmitting(true);
     setError(null);
-
-    // Reemplaza con tus IDs de EmailJS. Puedes encontrarlos en tu cuenta de EmailJS.
+    
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     emailjs.send(serviceID, templateID, formData, publicKey)
       .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
         setIsSubmitted(true);
         setIsSubmitting(false);
-        // Opcional: Resetear el formulario tras el envío exitoso
-        // setFormData({ name: '', email: '', message: '' });
       }, (err) => {
-        console.error('FAILED...', err);
         setError('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
         setIsSubmitting(false);
       });
