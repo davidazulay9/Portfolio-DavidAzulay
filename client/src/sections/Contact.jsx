@@ -33,9 +33,9 @@ const Contact = () => {
     setError(null);
 
     // Reemplaza con tus IDs de EmailJS. Puedes encontrarlos en tu cuenta de EmailJS.
-    const serviceID = 'service_mcf6ttk';
-    const templateID = 'template_mhcso0z';
-    const publicKey = 'beeoPrqAWPkK6WY7G';
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     emailjs.send(serviceID, templateID, formData, publicKey)
       .then((response) => {
