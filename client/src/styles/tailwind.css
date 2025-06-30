@@ -1,0 +1,16 @@
+/* src/styles/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Aquí puedes añadir estilos globales adicionales o personalizar componentes de Tailwind.
+  Por ejemplo:
+  body {
+    @apply font-sans antialiased;
+  }
+
+  .custom-card {
+    @apply bg-white rounded-lg shadow-md p-4;
+  }
+*/ 
